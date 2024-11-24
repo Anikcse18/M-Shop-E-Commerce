@@ -1,12 +1,15 @@
 "use client";
+import React from "react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import React from "react";
+import HeaderRoute from "@/components/common/headerroute";
 
 function Auth() {
   const [tap, setTap] = useState("signin");
   return (
+
     <section>
+      <HeaderRoute route_name={"Sign Up"} />
       <div className="flex gap-3">
         <Button className="" onClick={() => setTap("signin")}>
           Sign In
@@ -18,6 +21,7 @@ function Auth() {
         {tap == "signup" && <p className="text-3xl bg-red-500">Sign Up</p>}
       </div>
     </section>
+    
   );
 }
 

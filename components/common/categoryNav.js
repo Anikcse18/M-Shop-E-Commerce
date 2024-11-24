@@ -20,7 +20,7 @@ export function SingleCategoryMenu() {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="text-lg px-4 py-2 bg-gray-100">
+          <NavigationMenuTrigger className="text-lg px-4 py-7 bg-gray-100">
             All Category
           </NavigationMenuTrigger>
           <NavigationMenuContent>

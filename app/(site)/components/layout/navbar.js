@@ -9,6 +9,7 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa6";
+
 import { FiShoppingCart } from "react-icons/fi";
 import { CiHeart, CiLocationOn } from "react-icons/ci";
 import { IoIosInformationCircleOutline } from "react-icons/io";
@@ -20,6 +21,7 @@ import { LuPhoneCall } from "react-icons/lu";
 import { Input } from "@/components/ui/input";
 import { SingleCategoryMenu } from "../../../../components/common/categoryNav";
 import MyTooltip from "../../../../components/common/tooltip";
+
 const Navbar = () => {
   return (
     <header>
@@ -55,7 +57,7 @@ const Navbar = () => {
       <div className=" bg-[#1b6392] md:py-4 py-2 border-b border-b-white border-opacity-30">
         <div className="flex sm:flex-row flex-col items-center justify-between container">
           <p className="text-white md:text-base text-sm">
-            Welcome to Clicon online eCommerce store.{" "}
+            Welcome to Clicon online eCommerce store.
           </p>
           <div>
             <div className="flex items-center gap-2 text-white">
@@ -101,14 +103,14 @@ const Navbar = () => {
             <div className="flex lg:gap-4 gap-4 items-center">
               <div className="bottom_nav_item">
                 <MyTooltip
-                  title={<CiLocationOn className="md:text-lg text-2xl" />}
+                  title={<CiLocationOn className="md:text-xl text-2xl" />}
                   content={"Track Order"}
                 />
                 <p className="md:flex hidden">Track Order</p>
               </div>
               <div className="bottom_nav_item">
                 <MyTooltip
-                  title={<GoGitCompare className="md:text-lg text-2xl" />}
+                  title={<GoGitCompare className="md:text-xl text-2xl" />}
                   content={"Compare"}
                 />
                 <p className="md:flex hidden">Compare</p>
@@ -116,7 +118,7 @@ const Navbar = () => {
               <div className="bottom_nav_item">
                 <MyTooltip
                   title={
-                    <MdOutlineSupportAgent className="md:text-lg text-2xl" />
+                    <MdOutlineSupportAgent className="md:text-xl text-2xl" />
                   }
                   content={"Customer Support"}
                 />
@@ -125,7 +127,7 @@ const Navbar = () => {
               <div className="bottom_nav_item">
                 <MyTooltip
                   title={
-                    <IoIosInformationCircleOutline className="md:text-lg text-2xl" />
+                    <IoIosInformationCircleOutline className="md:text-xl text-2xl" />
                   }
                   content={"Need Help?"}
                 />
@@ -134,7 +136,7 @@ const Navbar = () => {
             </div>
           </div>
           <div className="bottom_nav_item md:!flex !hidden">
-            <LuPhoneCall />
+            <LuPhoneCall className="md:text-xl text-2xl" />
             <p>+8801998311602</p>
           </div>
         </div>
