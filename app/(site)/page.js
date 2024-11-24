@@ -12,7 +12,8 @@ import Saveupto from "./components/home/saveupto";
 import Flashsell from "./components/home/flashsell";
 import LatestNews from "./components/home/latest";
 
-export default function Home() {
+export default async function Home() {
+  await new Promise((resolve) => setTimeout(resolve, 2000));
   return (
     <div>
       <Hero />

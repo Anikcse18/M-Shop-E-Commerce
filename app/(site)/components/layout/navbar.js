@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Button from "../common/button";
+import Button from "../../../../components/common/button";
 import {
   FaArrowRightLong,
   FaFacebook,
@@ -18,8 +18,8 @@ import { GoGitCompare } from "react-icons/go";
 import { FaBagShopping } from "react-icons/fa6";
 import { LuPhoneCall } from "react-icons/lu";
 import { Input } from "@/components/ui/input";
-import { SingleCategoryMenu } from "../common/categoryNav";
-import MyTooltip from "../common/tooltip";
+import { SingleCategoryMenu } from "../../../../components/common/categoryNav";
+import MyTooltip from "../../../../components/common/tooltip";
 const Navbar = () => {
   return (
     <header>

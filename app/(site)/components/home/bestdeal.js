@@ -5,9 +5,13 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { IoEyeOutline } from "react-icons/io5";
 import { CiHeart } from "react-icons/ci";
 import { CiShoppingCart } from "react-icons/ci";
-import { Rate } from "antd";
+
 import { useEffect, useState } from "react";
-import { startCountDown } from "../common/countdown"; // Adjust the path based on your project structure
+import { startCountDown } from "../../../../components/common/countdown";
+
+import { FaRegStar, FaStar } from "react-icons/fa";
+
+import Rating from "react-rating"; // Adjust the path based on your project structure
 
 const BestDeal = () => {
   const products = [
@@ -176,7 +180,23 @@ const BestDeal = () => {
 
           <div className="space-y-4 flex flex-col">
             <div className="flex items-center gap-2">
-              <Rate allowHalf defaultValue={2.5} />
+              <Rating
+                emptySymbol={
+                  <FaRegStar
+                    className="text-2xl text-gray-100"
+                    style={{ marginRight: "6px" }}
+                  />
+                }
+                fullSymbol={
+                  <FaStar
+                    className="text-2xl text-primary"
+                    style={{ marginRight: "6px" }}
+                  />
+                }
+                initialRating={2.5}
+                readonly
+              />
+
               <span className="text-gray-500">(12,890)</span>
             </div>
             <h1>

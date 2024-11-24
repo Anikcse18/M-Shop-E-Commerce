@@ -6,7 +6,8 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { CiShoppingCart } from "react-icons/ci";
 import { CiHeart } from "react-icons/ci";
 import { IoEyeOutline } from "react-icons/io5";
-import { Rate } from "antd";
+import Rating from "react-rating";
+import { FaRegStar, FaStar } from "react-icons/fa";
 
 const ComputerAcess = () => {
   const products = [
@@ -199,7 +200,23 @@ const ComputerAcess = () => {
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Rate allowHalf disabled defaultValue={product.rating} />
+                    <Rating
+                      emptySymbol={
+                        <FaRegStar
+                          className="text-2xl text-gray-100"
+                          style={{ marginRight: "6px" }}
+                        />
+                      }
+                      fullSymbol={
+                        <FaStar
+                          className="text-2xl text-primary"
+                          style={{ marginRight: "6px" }}
+                        />
+                      }
+                      initialRating={product.rating}
+                      readonly
+                    />
+
                     <span className="text-gray-500">
                       ({product.reviewCount})
                     </span>

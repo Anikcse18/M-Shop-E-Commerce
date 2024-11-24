@@ -4,7 +4,7 @@ import { CgProfile } from "react-icons/cg";
 import { MdOutlineDateRange } from "react-icons/md";
 import { BsChatDots } from "react-icons/bs";
 import { FaArrowRightLong } from "react-icons/fa6";
-import Button from "../common/button";
+import Button from "../../../../components/common/button";
 
 const LatestNews = () => {
   const products = [

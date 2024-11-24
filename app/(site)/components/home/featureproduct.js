@@ -1,16 +1,17 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { CiShoppingCart } from "react-icons/ci";
 import { CiHeart } from "react-icons/ci";
 import { IoEyeOutline } from "react-icons/io5";
-import { Button, Rate } from "antd";
-import { useRouter } from "next/router";
+
+import { FaRegStar, FaStar } from "react-icons/fa";
+
+import Rating from "react-rating";
 
 const Featureproduct = () => {
-  // const router = useRouter();
   const products = [
     {
       index: 1,
@@ -119,13 +120,12 @@ const Featureproduct = () => {
       sellingStatus: "",
     },
   ];
-
-  const navLinks = [
-    { name: "All Products", href: "/" },
-    { name: "Smart Phone", href: "/phone" },
-    { name: "Laptop", href: "/laptop" },
-    { name: "Headphone", href: "/headphone" },
-    { name: "Tv", href: "/tv" },
+  const tabs = [
+    { _id: 1, name: "All Products", tab: "allproducts" },
+    { _id: 2, name: "Smart Phone", tab: "phone" },
+    { _id: 3, name: "Laptop", tab: "laptop" },
+    { _id: 4, name: "Headphone", tab: "headphone" },
+    { _id: 5, name: "Tv", tab: "tv" },
   ];
 
   function discount(percent, price) {
@@ -133,16 +133,15 @@ const Featureproduct = () => {
     const discountedPriceRounded = Math.round(discountedPrice);
     return discountedPriceRounded;
   }
-  // const style = {
-  //   marginRight: 10,
-  //   color: router.asPath === href ? "red" : "black",
-  // };
+  const handelclick = (value) => {
+    console.log("clicked:", value);
+  };
 
   return (
     <div className="container public-sans mt-8">
       <section className="grid grid-cols-1 lg:grid-cols-12 lg:gap-3">
         {/* // Left Div */}
-        <div className="md:col-span-3 bg-[#F3DE6D] pt-8 ">
+        <div className="md:col-span-3 bg-[#F3DE6D] pt-8 relative">
           <div className="flex flex-col items-center px-2">
             <h3 className="text-[#BE4646] text-sm mt-4">
               COMPUTER & ACCESSORIES
@@ -166,7 +165,7 @@ const Featureproduct = () => {
             height={148}
             alt="Feature Product"
             layout="responsive"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover lg:absolute bottom-0"
           />
         </div>
         {/* /Right Div */}
@@ -181,14 +180,16 @@ const Featureproduct = () => {
             <div className="flex items-center gap-5">
               <div className="hidden lg:flex">
                 <nav className="text-gray-400  gap-5 hidden md:flex  items-center">
-                  {navLinks.map((link) => (
-                    <Link
-                      key={link.name}
-                      href={link.href}
-                      className={`hover:underline hover:text-gray-900 hover:decoration-[#FA8232] underline-offset-8 `}
+                  {tabs.map((tab) => (
+                    <p
+                      key={tab._id}
+                      onClick={() => {
+                        handelclick(tab.tab);
+                      }}
+                      className={`hover:underline hover:text-gray-900 hover:decoration-[#FA8232] underline-offset-8 cursor-pointer `}
                     >
-                      {link.name}
-                    </Link>
+                      {tab.name}
+                    </p>
                   ))}
                 </nav>
               </div>
@@ -201,7 +202,7 @@ const Featureproduct = () => {
           </section>
           {/* Product Section */}
           <section className="">
-            <div className="grid md:grid-cols-4 gap-4 mt-5">
+            <div className="grid md:grid-cols-4 gap-4 mt-2">
               {products.map((product, idx) => (
                 <div
                   key={idx}
@@ -233,11 +234,27 @@ const Featureproduct = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Rate allowHalf disabled defaultValue={product.rating} />
-                    <span className="text-gray-500">
+                  <div className=" flex items-center gap-2">
+                    <Rating
+                      emptySymbol={
+                        <FaRegStar
+                          className="text-2xl text-gray-100"
+                          style={{ marginRight: "6px" }}
+                        />
+                      }
+                      fullSymbol={
+                        <FaStar
+                          className="text-2xl text-primary"
+                          style={{ marginRight: "6px" }}
+                        />
+                      }
+                      initialRating={product.rating}
+                      readonly
+                    />
+                    {/* <Rate allowHalf disabled defaultValue={product.rating} /> */}
+                    <p className="text-gray-500 text-lg ">
                       ({product.reviewCount})
-                    </span>
+                    </p>
                   </div>
                   <summary className="line-clamp-2 text-sm">
                     {product.productTitle}
