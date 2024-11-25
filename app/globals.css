@@ -43,6 +43,7 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
     --route-header: 200, 11%, 96%; /* gray color for route header */
+    --secondary-text-color: 199, 9%, 41%;
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -69,7 +70,6 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-    --secondary-text-color: 199, 9%, 41%;
   }
 }
 
