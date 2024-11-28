@@ -14,7 +14,9 @@
 .category {
   @apply text-white border border-gray-500 px-2 py-2 rounded-md hover:border-white hover:bg-[#303639];
 }
-
+.button {
+  @apply bg-white h-[48px] hover:bg-[#FA8232] text-black hover:text-white;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -23,7 +25,7 @@
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-    --primary: 24, 95%, 59%;
+    --primary: 0 0% 9%;
     --primary-foreground: 0 0% 98%;
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;
@@ -123,6 +125,9 @@
 /* Background Gray Color */
 .route_header {
   background-color: hsl(var(--route-header));
+}
+.text-gray-color {
+  color: #191c1f;
 }
 /* 
 Secondary text property */
