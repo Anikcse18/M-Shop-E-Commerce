@@ -9,14 +9,17 @@
 }
 
 .public-sans {
-  font-family: "Public Sans", sans-serif;
+  font-family: "Public Sans", serif;
 }
+
 .category {
   @apply text-white border border-gray-500 px-2 py-2 rounded-md hover:border-white hover:bg-[#303639];
 }
+
 .button {
-  @apply bg-white h-[48px] hover:bg-[#FA8232] text-black hover:text-white;
+  @apply public-sans bg-white h-[48px] hover:bg-[#FA8232] text-black hover:text-white;
 }
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -45,8 +48,15 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
     --route-header: 200, 11%, 96%; /* gray color for route header */
+
+    /* add custom color */
+    --nav-primary: 204, 69%, 34%;
+    /* Button Active */
+    --button-active: 24, 95%, 59%;
+    /* secondary text color */
     --secondary-text-color: 199, 9%, 41%;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -137,4 +147,8 @@ Secondary text property */
   font-family: "Public Sans", sans-serif;
   line-height: 20px;
   font-weight: 400;
+}
+
+.auth-details-text {
+  @apply public-sans text-sm text-[#5F6C72];
 }

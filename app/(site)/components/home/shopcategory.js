@@ -43,7 +43,7 @@ const Shopcategory = () => {
   return (
     <div className="container public-sans mt-8 ">
       <section className="text-center">
-        <h1 className="text-2xl font-medium">Shop with Categories</h1>
+        <h1 className="text-3xl font-medium">Shop with Categories</h1>
       </section>
       <section className="mt-10 ">
         <Swiper

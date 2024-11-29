@@ -48,7 +48,7 @@ const Footer = () => {
               <FaBagShopping className="text-yellow-500" />
               <span>MStore</span>
             </div>
-            <div className="space-y-2 mt-4 public-sans">
+            <div className="space-y-2 mt-4 ">
               <p className="text-[#77878F]">Customer Support</p>
               <h3>{customerSupport.phone}</h3>
               <h3 className="max-w-[248px] text-[#77878F]">

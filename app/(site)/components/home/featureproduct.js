@@ -238,13 +238,13 @@ const Featureproduct = () => {
                     <Rating
                       emptySymbol={
                         <FaRegStar
-                          className="text-2xl text-gray-100"
+                          className="text-2xl text-button-active"
                           style={{ marginRight: "6px" }}
                         />
                       }
                       fullSymbol={
                         <FaStar
-                          className="text-2xl text-primary"
+                          className="text-2xl text-button-active"
                           style={{ marginRight: "6px" }}
                         />
                       }
