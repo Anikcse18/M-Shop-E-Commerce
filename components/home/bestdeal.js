@@ -7,11 +7,12 @@ import { CiHeart } from "react-icons/ci";
 import { CiShoppingCart } from "react-icons/ci";
 
 import { useEffect, useState } from "react";
-import { startCountDown } from "../../../../components/common/countdown";
+// import { startCountDown } from "../../../../components/common/countdown";
 
 import { FaRegStar, FaStar } from "react-icons/fa";
 
 import Rating from "react-rating"; // Adjust the path based on your project structure
+import { startCountDown } from "../common/countdown";
 
 const BestDeal = () => {
   const products = [
@@ -133,6 +134,7 @@ const BestDeal = () => {
     const countDownDate = new Date("Nov 25, 2024 15:37:25").getTime();
 
     // Start the countdown and update the state
+    // startCountDown(countDownDate, setTimeLeft);
     startCountDown(countDownDate, setTimeLeft);
   }, []);
 

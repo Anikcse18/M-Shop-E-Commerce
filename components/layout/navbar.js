@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import Button from "../../../../components/common/button";
 import {
   FaArrowRightLong,
   FaFacebook,
@@ -14,13 +13,16 @@ import { FiShoppingCart } from "react-icons/fi";
 import { CiHeart, CiLocationOn } from "react-icons/ci";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 import { MdOutlineSupportAgent } from "react-icons/md";
-import { FaSearch, FaUser } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
+import { AiOutlineUser } from "react-icons/ai";
 import { GoGitCompare } from "react-icons/go";
 import { FaBagShopping } from "react-icons/fa6";
 import { LuPhoneCall } from "react-icons/lu";
 import { Input } from "@/components/ui/input";
-import { SingleCategoryMenu } from "../../../../components/common/categoryNav";
-import MyTooltip from "../../../../components/common/tooltip";
+import Link from "next/link";
+import Button from "../common/button";
+import { SingleCategoryMenu } from "../common/categoryNav";
+import MyTooltip from "../common/tooltip";
 
 const Navbar = () => {
   return (
@@ -88,11 +90,13 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-2 text-white md:text-xl text-lg font-semibold ">
+          <div className="flex items-center gap-3 text-white md:text-2xl text-lg font-semibold ">
             <FaSearch className="md:hidden flex" />
             <FiShoppingCart className="cursor-pointer md:flex hidden" />
             <CiHeart className="cursor-pointer text-2xl" />
-            <FaUser className="cursor-pointer md:flex hidden" />
+            <Link href="/auth">
+              <AiOutlineUser className="cursor-pointer md:flex hidden" />
+            </Link>
           </div>
         </div>
       </div>

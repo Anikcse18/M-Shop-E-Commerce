@@ -1,8 +1,8 @@
+import Navbar from "@/components/layout/navbar";
 import "../globals.css";
-import Newsletter from "./components/home/newsletter";
-import BottomBar from "./components/layout/bottomBar";
-import Footer from "./components/layout/footer";
-import Navbar from "./components/layout/navbar";
+import Footer from "@/components/layout/footer";
+// import Footer from "../../components/layout/footer";
+// import Navbar from "./components/layout/navbar";
 
 export const metadata = {
   title: "M Shop",

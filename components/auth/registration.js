@@ -4,25 +4,35 @@ import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { FaArrowRightLong } from "react-icons/fa6";
 
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
 
 import { Checkbox } from "@/components/ui/checkbox";
-import FormButton from "../../components/form/formbutton";
+import FormButton from "../form/formbutton";
+
+import AuthModal from "./authmodal";
+import Link from "next/link";
 
 const Registration = () => {
-  const [tap, setTap] = useState("signin");
   const [activeTab, setActiveTab] = useState("tab1");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
+
+  const handelClick = (e) => {
+    setIsModalOpen(true);
+  };
+
   return (
     <div>
       <section className="flex justify-center items-center">
-        <Tabs defaultValue="account" className="w-[424px] shadow-lg">
+        <Tabs
+          defaultValue="account"
+          className="w-[424px] shadow-lg border-[1px]"
+        >
           <section className="flex flex-row w-full justify-between h-14 border-b-2">
             <Button
               onClick={() => handleTabClick("tab1")}
@@ -34,6 +44,7 @@ const Registration = () => {
             >
               Sign In
             </Button>
+
             <Button
               onClick={() => handleTabClick("tab2")}
               className={`bg-transparent public-sans text-gray-500  border-b-4 border-white   shadow-none hover:border-[#FA8232] hover:bg-white hover:text-black rounded-none text-xl flex-1 h-full ${
@@ -45,10 +56,14 @@ const Registration = () => {
               Sign Up
             </Button>
           </section>
+
           <section className="p-8">
             {activeTab === "tab1" && (
               <TabsContent value="account">
-                <form className="flex flex-col gap-6">
+                <form
+                  className="flex flex-col gap-6"
+                  onClick={() => handelClick(true)}
+                >
                   <Input
                     className="h-[40px] w-full details-text"
                     type="email"
@@ -108,7 +123,7 @@ const Registration = () => {
             )}
             {activeTab === "tab2" && (
               <TabsContent value="account">
-                <form className="flex flex-col gap-6">
+                <form className="flex flex-col gap-6" onSubmit={handelClick}>
                   <Input
                     className="h-[45px] w-full details-text"
                     type="text"
@@ -193,6 +208,7 @@ const Registration = () => {
                     </span>
                   </Button>
                 </div>
+                <AuthModal isOpen={isModalOpen} onOpenChange={setIsModalOpen} />
               </TabsContent>
             )}
           </section>

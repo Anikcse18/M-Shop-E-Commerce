@@ -1,31 +1,43 @@
+"use client";
 import { Input } from "@/components/ui/input";
-import React from "react";
-import FormButton from "../../components/form/formbutton";
+import React, { useState } from "react";
 import Link from "next/link";
 import FormHeader from "./formheader";
+import FormButton from "../form/formbutton";
+import AuthModal from "./authmodal";
 
 const ForgetPassword = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handelSubmit = (e) => {
+    e.preventDefault();
+
+    setIsModalOpen(true);
+    console.log("Click Forget password");
+  };
   return (
     <div className=" flex justify-center items-center">
-      <div className="w-[424px] shadow-lg p-8 ">
+      <div className="w-[424px] shadow-lg p-8 border-[1px] onClick={handelClick} ">
         <FormHeader
           headding="Forget Password"
-          details="Enter the email address or mobile phone number associated with your Clicon account."
+          details="Enter the email address or mobile phone number associated with your M-Shop account."
         />
         <section>
-          <form className="flex flex-col gap-6 mt-8">
+          <form className="flex flex-col gap-6 mt-8" onClick={handelSubmit}>
             <Input
               className="h-[40px] w-full details-text"
               type="email"
               label="Email Address"
             />
+            {/* <Link href={"/auth/resetPassword"}>
+             
+            </Link> */}
             <FormButton btnName="Send Code" />
           </form>
         </section>
         <section className="flex flex-col space-y-1 mt-8">
           <p className="text-sm text-secondary-text-color">
             Already have account?
-            <Link href={"/"}>
+            <Link href={"/auth"}>
               <button className="text-nav-primary public-sans ml-1">
                 {" "}
                 Sign In
@@ -34,10 +46,8 @@ const ForgetPassword = () => {
           </p>
           <p className="text-sm text-secondary-text-color">
             Don’t have account?
-            <Link href={"/"}>
-              {" "}
+            <Link href={"/auth"}>
               <button className="text-nav-primary public-sans ml-1">
-                {" "}
                 Sign Up
               </button>
             </Link>
@@ -52,6 +62,7 @@ const ForgetPassword = () => {
           for help restoring access to your account.
         </h1>
       </div>
+      <AuthModal isOpen={isModalOpen} onOpenChange={setIsModalOpen} />
     </div>
   );
 };

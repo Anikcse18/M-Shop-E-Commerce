@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React from "react";
 
-import Button from "../../../../components/common/button";
+import Button from "../common/button";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 import { Swiper, SwiperSlide } from "swiper/react";

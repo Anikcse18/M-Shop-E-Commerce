@@ -1,10 +1,9 @@
 "use client";
 import React from "react";
 import HeaderRoute from "@/components/common/headerroute";
-import Registration from "./components/registration";
-import ForgetPassword from "./components/forgetpassword";
-import ResetPassword from "./components/resetpassword";
-import VerifyMail from "./components/verifymail";
+import Registration from "@/components/auth/registration";
+import AuthModal from "@/components/auth/authmodal";
+import ResetPassword from "@/components/auth/resetpassword";
 
 function Auth() {
   return (
@@ -12,10 +11,7 @@ function Auth() {
       <HeaderRoute route_name={"Sign Up"} />
 
       <div className="container mt-14 mb-24">
-        {/* <Registration /> */}
-        {/* <ForgetPassword /> */}
-        {/* <ResetPassword /> */}
-        {<VerifyMail />}
+        <Registration />
       </div>
     </section>
   );
