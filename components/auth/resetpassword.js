@@ -3,17 +3,16 @@ import React from "react";
 import { Input } from "@/components/ui/input";
 import FormHeader from "./formheader";
 import FormButton from "../form/formbutton";
-
+import HeaderRoute from "../common/headerroute";
 
 const ResetPassword = () => {
-  
-
   const handelSubmit = (e) => {
     e.preventDefault();
   };
 
   return (
     <div className=" flex justify-center items-center">
+      {/* <HeaderRoute /> */}
       <div className="w-[424px] shadow-lg p-8 border-[1px]">
         <FormHeader
           headding="Reset Password"

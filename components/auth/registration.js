@@ -13,6 +13,7 @@ import FormButton from "../form/formbutton";
 
 import AuthModal from "./authmodal";
 import Link from "next/link";
+import HeaderRoute from "../common/headerroute";
 
 const Registration = () => {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -28,6 +29,8 @@ const Registration = () => {
 
   return (
     <div>
+      {/* <HeaderRoute /> */}
+
       <section className="flex justify-center items-center">
         <Tabs
           defaultValue="account"

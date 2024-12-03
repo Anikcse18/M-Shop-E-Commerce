@@ -1,9 +1,8 @@
 "use client";
 import ForgetPassword from "@/components/auth/forgetpassword";
-import ResetPassword from "@/components/auth/resetpassword";
 import React from "react";
 
-const page = () => {
+const Forgetpassword = () => {
   return (
     <div className="container mt-14 mb-24">
       <ForgetPassword />
@@ -11,4 +10,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Forgetpassword;
