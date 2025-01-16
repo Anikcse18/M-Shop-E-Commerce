@@ -13,11 +13,13 @@ import { useBreadcrumbs } from "@/utils/useBreadcrumbs";
 
 const HeaderRoute = () => {
   const breadcrumbs = useBreadcrumbs();
-  console.log(breadcrumbs.label);
+  // console.log(breadcrumbs[0].label);
 
   return (
     <Breadcrumb
-      className={`bg-gray-100 p-8 ${breadcrumbs.length == 0 && "hidden"}`}
+      className={`bg-gray-100 p-8 ${
+        breadcrumbs.length == 0 || (breadcrumbs[0].label == "Who" && "hidden")
+      }`}
     >
       <BreadcrumbList className="text-xl container">
         <BreadcrumbItem>

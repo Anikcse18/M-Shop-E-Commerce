@@ -138,6 +138,7 @@ const Flashsell = () => {
               ))}
             </div>
           ))}
+          
         </div>
         {/* Best Seller */}
         <div className="flex flex-col space-y-2">

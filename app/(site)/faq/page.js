@@ -1,12 +1,3 @@
-// import React from "react";
-// import {
-//   Accordion,
-//   AccordionContent,
-//   AccordionItem,
-//   AccordionTrigger,
-// } from "@/components/ui/accordion";
-// import { Plus, Minus } from "lucide-react";
-
 "use client";
 
 import React, { useState } from "react";
@@ -69,7 +60,7 @@ const FAQ = () => {
   return (
     <div className="container public-sans flex flex-col gap-14  lg:gap-28 md:flex-row mt-10 md:mt-16  lg:mt-24  xl:h-[100vh] ">
       <div className="flex-1">
-        <h1 className=" text-[20px] md:text-[28px] xl:text-[32px] p-2">
+        <h1 className=" text-[23px] md:text-[28px] xl:text-[32px] p-2">
           Frequently Asked Question
         </h1>
 
@@ -88,7 +79,7 @@ const FAQ = () => {
         </Accordion>
       </div>
       <div className="flex-1">
-        <div className="lg:h-[500px] max-w-[400px] bg-[#FBF4CE] p-5">
+        <div className="lg:h-[500px] max-w-[400px] bg-[#FBF4CE] p-5 mb-16 md:mb-0">
           <div>
             <h1 className="text-lg public-sans font-medium">
               Don’t find your answer, Ask for support.
