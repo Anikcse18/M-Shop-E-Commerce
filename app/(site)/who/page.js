@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Team from "@/components/who/team";
+import Flashsell from "@/components/home/flashsell";
 
 const Who = () => {
   const features = [
@@ -10,7 +11,7 @@ const Who = () => {
     { text: "Over 1 Million Electronics Products." },
   ];
   return (
-    <div className="mt-14">
+    <div className="mt-16">
       <div className="container ">
         <div className="flex flex-col md:flex-row justify-between gap-6">
           <div className="flex-1">
@@ -55,7 +56,7 @@ const Who = () => {
       </div>
       <div className="relative  w-full h-96 mt-16">
         <div className="absolute inset-0 bg-gradient-to-r from-[#FFFFFF]/50 to-[#FFFFFF]/5"></div>
-        <div className="absolute flex flex-col space-y-3 inset-14 md:max-w-[1320px] md:mx-auto xl:px-0 md:px-3">
+        <div className="absolute flex flex-col space-y-3 inset-10 lg:inset-14 md:max-w-[1320px] md:mx-auto xl:px-0 md:px-3">
           <h1 className="text-3xl font-semibold public-sans text-[#191C1F] max-w-80">
             Your trusted and reliable retail shop
           </h1>
@@ -63,7 +64,7 @@ const Who = () => {
             Praesent sed semper metus. Nunc aliquet dolor mauris, et fringilla
             elit gravida eget. Nunc consequat auctor urna a placerat.
           </p>
-          <button className="w-16 md:w-20 h-16 md:h-20 rounded-full flex items-center justify-center bg-[#FA8232] hover:bg-gray-600">
+          <button className="w-14 md:w-16 lg:w-20 h-14 md:h-16 lg:h-20 rounded-full flex items-center justify-center bg-[#FA8232] hover:bg-gray-600">
             <Image
               src="/who/play.png"
               width={20}
@@ -81,6 +82,9 @@ const Who = () => {
           height={300}
           className="w-full h-full object-cover "
         />
+      </div>
+      <div className="my-16">
+        <Flashsell />
       </div>
     </div>
   );
