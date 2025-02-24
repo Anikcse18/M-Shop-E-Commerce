@@ -1,19 +1,37 @@
 "use client";
 import React from "react";
+import dynamic from "next/dynamic";
+
 import { useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+const Tabs = dynamic(
+  () => import("@/components/ui/tabs").then((mod) => mod.Tabs),
+  { ssr: false }
+);
+const TabsContent = dynamic(
+  () => import("@/components/ui/tabs").then((mod) => mod.TabsContent),
+  { ssr: false }
+);
+
+const Input = dynamic(
+  () => import("@/components/ui/input").then((mod) => mod.Input),
+  { ssr: false }
+);
+const Button = dynamic(
+  () => import("@/components/ui/button").then((mod) => mod.Button),
+  { ssr: false }
+);
 
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
 
-import { Checkbox } from "@/components/ui/checkbox";
+const Checkbox = dynamic(
+  () => import("@/components/ui/checkbox").then((mod) => mod.Checkbox),
+  { ssr: false }
+);
+
 import FormButton from "../form/formbutton";
 
 import AuthModal from "./authmodal";
-import Link from "next/link";
-import HeaderRoute from "../common/headerroute";
 
 const Registration = () => {
   const [activeTab, setActiveTab] = useState("tab1");

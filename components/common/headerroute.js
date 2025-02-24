@@ -1,14 +1,34 @@
 "use client";
 import Link from "next/link";
 import { ChevronRight, Home } from "lucide-react";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
+import dynamic from "next/dynamic";
+
+const Breadcrumb = dynamic(
+  () => import("@/components/ui/breadcrumb").then((mod) => mod.Breadcrumb),
+  { ssr: false }
+);
+const BreadcrumbItem = dynamic(
+  () => import("@/components/ui/breadcrumb").then((mod) => mod.BreadcrumbItem),
+  { ssr: false }
+);
+const BreadcrumbLink = dynamic(
+  () => import("@/components/ui/breadcrumb").then((mod) => mod.BreadcrumbLink),
+  { ssr: false }
+);
+const BreadcrumbList = dynamic(
+  () => import("@/components/ui/breadcrumb").then((mod) => mod.BreadcrumbList),
+  { ssr: false }
+);
+const BreadcrumbPage = dynamic(
+  () => import("@/components/ui/breadcrumb").then((mod) => mod.BreadcrumbPage),
+  { ssr: false }
+);
+const BreadcrumbSeparator = dynamic(
+  () =>
+    import("@/components/ui/breadcrumb").then((mod) => mod.BreadcrumbSeparator),
+  { ssr: false }
+);
+
 import { useBreadcrumbs } from "@/utils/useBreadcrumbs";
 
 const HeaderRoute = () => {

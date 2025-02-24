@@ -1,12 +1,46 @@
 import React from "react";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuLink,
-} from "@/components/ui/navigation-menu";
+import dynamic from "next/dynamic";
+const NavigationMenu = dynamic(
+  () =>
+    import("@/components/ui/navigation-menu").then((mod) => mod.NavigationMenu),
+  { ssr: false }
+);
+const NavigationMenuContent = dynamic(
+  () =>
+    import("@/components/ui/navigation-menu").then(
+      (mod) => mod.NavigationMenuContent
+    ),
+  { ssr: false }
+);
+const NavigationMenuItem = dynamic(
+  () =>
+    import("@/components/ui/navigation-menu").then(
+      (mod) => mod.NavigationMenuItem
+    ),
+  { ssr: false }
+);
+const NavigationMenuList = dynamic(
+  () =>
+    import("@/components/ui/navigation-menu").then(
+      (mod) => mod.NavigationMenuList
+    ),
+  { ssr: false }
+);
+const NavigationMenuTrigger = dynamic(
+  () =>
+    import("@/components/ui/navigation-menu").then(
+      (mod) => mod.NavigationMenuTrigger
+    ),
+  { ssr: false }
+);
+const NavigationMenuLink = dynamic(
+  () =>
+    import("@/components/ui/navigation-menu").then(
+      (mod) => mod.NavigationMenuLink
+    ),
+  { ssr: false }
+);
+
 
 const categories = [
   { title: "Electronics", href: "/category/electronics" },

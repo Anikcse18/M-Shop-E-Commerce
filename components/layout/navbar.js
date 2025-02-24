@@ -1,5 +1,7 @@
 "use client";
 import React from "react";
+import dynamic from "next/dynamic";
+
 import {
   FaArrowRightLong,
   FaFacebook,
@@ -18,7 +20,10 @@ import { AiOutlineUser } from "react-icons/ai";
 import { GoGitCompare } from "react-icons/go";
 import { FaBagShopping } from "react-icons/fa6";
 import { LuPhoneCall } from "react-icons/lu";
-import { Input } from "@/components/ui/input";
+const Input = dynamic(
+  () => import("@/components/ui/input").then((mod) => mod.Input),
+  { ssr: false }
+);
 import Link from "next/link";
 import Button from "../common/button";
 import { SingleCategoryMenu } from "../common/categoryNav";
@@ -47,7 +52,7 @@ const Navbar = () => {
           <div>
             <Button
               name={
-                <span className="flex gap-2 items-center p-2 ">
+                <span className="flex gap-2 items-center p-2">
                   Book Now <FaArrowRightLong />
                 </span>
               }
@@ -56,7 +61,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className=" bg-[#1b6392] md:py-4 py-2 border-b border-b-white border-opacity-30">
+      <div className="bg-[#1b6392] md:py-4 py-2 border-b border-b-white border-opacity-30">
         <div className="flex sm:flex-row flex-col items-center justify-between container">
           <p className="text-white md:text-base text-sm">
             Welcome to Clicon online eCommerce store.
@@ -73,7 +78,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className=" bg-[#1b6392] md:py-4 py-2 border-b border-b-white">
+      <div className="bg-[#1b6392] md:py-4 py-2 border-b border-b-white">
         <div className="flex items-center justify-between container gap-4">
           <div className="flex items-center gap-2 text-white font-bold text-3xl">
             <FaBagShopping className="text-yellow-500" />
@@ -90,7 +95,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-3 text-white md:text-2xl text-lg font-semibold ">
+          <div className="flex items-center gap-3 text-white md:text-2xl text-lg font-semibold">
             <FaSearch className="md:hidden flex" />
             <FiShoppingCart className="cursor-pointer md:flex hidden" />
             <CiHeart className="cursor-pointer text-2xl" />
@@ -100,7 +105,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="  md:py-4 py-2 border-b border-b-gray-500 border-opacity-15">
+      <div className="md:py-4 py-2 border-b border-b-gray-500 border-opacity-15">
         <div className="flex items-center justify-between flex-wraps container gap-4">
           <div className="flex gap-4 justify-between items-center flex-wrap">
             <SingleCategoryMenu />

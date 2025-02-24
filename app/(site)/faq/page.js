@@ -1,17 +1,40 @@
 "use client";
 
 import React, { useState } from "react";
+import dynamic from "next/dynamic";
+
 import { Plus, Minus } from "lucide-react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-// import Button from "@/components/common/button";
+
+const Accordion = dynamic(
+  () => import("@/components/ui/accordion").then((mod) => mod.Accordion),
+  { ssr: false }
+);
+const AccordionItem = dynamic(
+  () => import("@/components/ui/accordion").then((mod) => mod.AccordionItem),
+  { ssr: false }
+);
+const AccordionTrigger = dynamic(
+  () => import("@/components/ui/accordion").then((mod) => mod.AccordionTrigger),
+  { ssr: false }
+);
+const AccordionContent = dynamic(
+  () => import("@/components/ui/accordion").then((mod) => mod.AccordionContent),
+  { ssr: false }
+);
+
+const Input = dynamic(
+  () => import("@/components/ui/input").then((mod) => mod.Input),
+  { ssr: false }
+);
+const Textarea = dynamic(
+  () => import("@/components/ui/textarea").then((mod) => mod.Textarea),
+  { ssr: false }
+);
+const Button = dynamic(
+  () => import("@/components/ui/button").then((mod) => mod.Button),
+  { ssr: false }
+);
+
 import { FaArrowRightLong } from "react-icons/fa6";
 
 const FAQ = () => {

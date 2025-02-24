@@ -41,14 +41,14 @@ const Footer = () => {
   // className="flex flex-col lg:flex-row  lg:justify-between  py-16"
   return (
     <footer className="text-white public-sans">
-      <section className=" container ">
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5  gap-4 py-16">
+      <section className="container">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-4 py-16">
           <div className="">
             <div className="flex items-center gap-2 text-white font-bold text-3xl">
               <FaBagShopping className="text-yellow-500" />
               <span>MStore</span>
             </div>
-            <div className="space-y-2 mt-4 ">
+            <div className="space-y-2 mt-4">
               <p className="text-[#77878F]">Customer Support</p>
               <h3>{customerSupport.phone}</h3>
               <h3 className="max-w-[248px] text-[#77878F]">

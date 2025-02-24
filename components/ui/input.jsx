@@ -19,7 +19,7 @@ const Input = React.forwardRef(
             <label className=" text-sm text-gray-color flex justify-between">
               <h1> {label}</h1>{" "}
               <Link href="/auth/forgetPassword">
-                <h1 className="text-nav-primary font-medium ">
+                <h1 className="text-nav-primary font-medium">
                   {forgetpassword}
                 </h1>
               </Link>
@@ -53,10 +53,10 @@ const Input = React.forwardRef(
         ) : (
           <section>
             {/* <label className="text-sm text-gray-color">{label}</label> */}
-            <label className=" text-sm text-gray-color flex justify-between">
+            <label className="text-sm text-gray-color flex justify-between">
               <h1> {label}</h1>{" "}
               <Link href="/">
-                <h1 className="text-nav-primary font-medium ">
+                <h1 className="text-nav-primary font-medium">
                   {forgetpassword}
                 </h1>
               </Link>

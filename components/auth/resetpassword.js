@@ -1,6 +1,11 @@
 "use clint";
 import React from "react";
-import { Input } from "@/components/ui/input";
+import dynamic from "next/dynamic";
+
+const Input = dynamic(
+  () => import("@/components/ui/input").then((mod) => mod.Input),
+  { ssr: false }
+);
 import FormHeader from "./formheader";
 import FormButton from "../form/formbutton";
 import HeaderRoute from "../common/headerroute";

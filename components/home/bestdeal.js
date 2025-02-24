@@ -131,7 +131,7 @@ const BestDeal = () => {
   });
 
   useEffect(() => {
-    const countDownDate = new Date("Nov 25, 2024 15:37:25").getTime();
+    const countDownDate = new Date("Mar 25, 2025 15:37:25").getTime();
 
     // Start the countdown and update the state
     // startCountDown(countDownDate, setTimeLeft);
@@ -153,7 +153,7 @@ const BestDeal = () => {
               ) : (
                 <h1>
                   {timeLeft.days}d : {timeLeft.hours}h : {timeLeft.minutes}m :
-                  {timeLeft.seconds}s
+                   {timeLeft.seconds}s
                 </h1>
               )}
             </time>
