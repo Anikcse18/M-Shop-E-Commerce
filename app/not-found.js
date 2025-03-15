@@ -10,7 +10,12 @@ const Notfound = () => {
   return (
     <div className="container lg:h-[80vh] flex flex-col items-center justify-center">
       <div>
-        <Image src="/error/404.png" alt="Error Page" width={500} height={500} />
+        <Image
+          src="/error/error.png"
+          alt="Error Page"
+          width={500}
+          height={500}
+        />
       </div>
       <div className="text-center ">
         <h1 className="text-4xl">404, Page not founds</h1>
