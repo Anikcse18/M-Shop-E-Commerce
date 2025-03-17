@@ -5,6 +5,7 @@ import Image from "next/image";
 import React from "react";
 
 const SingelAnswer = () => {
+  
   const ansid = useParams();
 
   const data = faqList.find((list) => list.id === parseInt(ansid.id));
